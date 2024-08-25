@@ -21,6 +21,53 @@ document.querySelectorAll('.option').forEach(function(optionElement) {
 
 
 
+// Images for different carousels
+const imageSets = {
+    shop: [
+      '/images/carousel-shop/image-shop0.png',
+      '/images/carousel-shop/image-shop1.jpg',
+      '/images/carousel-shop/image-shop2.jpg',
+      '/images/carousel-shop/image-shop3.jpg',
+      '/images/carousel-shop/image-shop4.png',
+      '/images/carousel-shop/image-shop5.png'
+    ],
+    b2b: [
+      '/images/carousel-b2b/image-b2b0.jpg',
+      '/images/carousel-b2b/image-b2b1.png',
+      '/images/carousel-b2b/image-b2b2.png',
+      '/images/carousel-b2b/image-b2b3.jpg',
+      '/images/carousel-b2b/image-b2b4.jpg',
+      '/images/carousel-b2b/image-b2b5.jpg'
+    ]
+  };
+  
+  // Function to change background for a specific carousel
+  function changeBackground(carouselClass, images) {
+    const randomIndex = Math.floor(Math.random() * images.length);
+    document.querySelector(`.${carouselClass}`).style.backgroundImage = `url(${images[randomIndex]})`;
+    console.log(`Changing ${carouselClass} to image index:`, randomIndex);
+  }
+  
+  // Initialize carousels and set intervals
+  function initializeCarousel(carouselClass, images) {
+    // Initial background change
+    changeBackground(carouselClass, images);
+  
+    // Set interval for changing the background every 10 seconds
+    setInterval(() => {
+      changeBackground(carouselClass, images);
+    }, 10000);
+  }
+  
+  // Initialize both carousels
+  initializeCarousel('cards-shop', imageSets.shop);
+  initializeCarousel('cards-b2b', imageSets.b2b);
+  
+
+
+
+
+
 /**********************************************
 
 const main = document.getElementById('main');
