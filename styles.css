@@ -662,6 +662,7 @@ main h2 {
   background-repeat: no-repeat;
   background-position: center;
   perspective: 1000px; /* Perspective for 3D effect */
+  z-index: 999;
 }
 
 .service-row {
