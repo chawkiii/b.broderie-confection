@@ -637,7 +637,7 @@ main h2 {
 .flex-container {
   width: 100%;
   max-width: 1520px;
-  height: calc(100vh - 3em);
+  height: calc(100vh - 5em);
   display: flex;
   flex-wrap: nowrap;
   justify-content: center;
@@ -662,7 +662,6 @@ main h2 {
   background-repeat: no-repeat;
   background-position: center;
   perspective: 1000px; /* Perspective for 3D effect */
-  z-index: 999;
 }
 
 .service-row {
