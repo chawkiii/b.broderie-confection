@@ -372,8 +372,8 @@ nav {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 200vw;
-  height: 200vw;
+  width: 300vw;
+  height: 300vw;
   border-radius: 50%;
   transform: translate(-50%, -50%);
   background: black;
@@ -394,11 +394,6 @@ nav {
   }
 }
 
-/*
-.header-logo::after{
-  background: radial-gradient(circle, transparent 50%, rgba(255, 217, 0, 0.1) 60%, transparent 100%);
-}
-*/
 /**************** header ****************/
 header {
   display: flex;
@@ -427,31 +422,11 @@ header {
   width: 100%;
   height: 100%;
   margin: 3em auto 0 auto;
-  animation: scroll-out linear forwards;
-  animation-timeline: view();
-  animation-range-start: exit -50px;
-  animation-range-end: exit;
   opacity: 1;
   scale: 1;
   transform: translateY(0%);
 }
-@keyframes scroll-out {
-  0% {
-    opacity: 1;
-    scale: 1;
-    transform: translateY(0%);
-  }
-  50% {
-    opacity: 0;
-    scale: 2;
-    transform: translateY(-50%);
-  }
-  100% {
-    opacity: 0;
-    scale: 2;
-    transform: translateY(-50%);
-  }
-}
+
 header h1 {
   color: #2c1700;
   font-size: 3.5em;
@@ -564,7 +539,8 @@ main h2 {
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-  margin: auto;
+  margin: 0px auto;
+  padding: 10px;
   width: 100%;
   max-width: 1520px;
 }
@@ -582,18 +558,16 @@ main h2 {
 @keyframes scroll-in1 {
   0% {
     opacity: 0;
-    scale: 0.5;
+
     transform: translateX(-50%);
   }
   50% {
     transform: translateX(-25%);
     opacity: 0.5;
-    scale: 0.5;
   }
   100% {
     transform: translateX(0);
     opacity: 1;
-    scale: 1;
   }
 }
 
@@ -612,18 +586,16 @@ main h2 {
 @keyframes scroll-in2 {
   0% {
     opacity: 0;
-    scale: 0.5;
+
     transform: translateX(50%);
   }
   50% {
     transform: translateX(25%);
     opacity: 0.5;
-    scale: 0.5;
   }
   100% {
     transform: translateX(0);
     opacity: 1;
-    scale: 1;
   }
 }
 
@@ -648,6 +620,7 @@ main h2 {
   .home-content img {
     width: 80%;
     min-width: none;
+    margin: 10px auto;
   }
 }
 
