@@ -629,7 +629,7 @@ main h2 {
   margin: 30px auto;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   width: 100%;
 }
 /* carousel */
@@ -637,52 +637,44 @@ main h2 {
 .flex-container {
   width: 100%;
   max-width: 1520px;
-  height: 400px;
+  height: calc(100vh - 3em);
   display: flex;
   flex-wrap: nowrap;
   justify-content: center;
-  padding: 10px 20px;
+  padding: 10px;
   margin: 0 auto;
 }
 
 .flex-card {
   width: 100px;
+  height: 100%;
   cursor: pointer;
   overflow: hidden;
-  border-radius: 2rem;
+  border-radius: 20px;
   margin: 0 10px;
   display: flex;
-  align-items: center;
+  align-items: start;
   justify-content: center;
-  transition: 1.5s cubic-bezier(0.28, -0.03, 0, 0.99);
+  transition: 1.5s cubic-bezier(0.28, -0.03, 0, 0.99),
+    background-image 2s ease-in-out;
   box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.8);
-}
-
-.cards {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  perspective: 1000px; /* Perspective for 3D effect */
-  border-radius: 20px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  transition: background-image 2s ease-in-out;
-  display: flex;
-  justify-content: center;
-  align-items: start;
+  perspective: 1000px; /* Perspective for 3D effect */
 }
 
 .service-row {
   color: white;
-  background: rgba(0, 0, 0, 0.5);
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
   flex-wrap: nowrap;
-  margin: 20px 0;
-  height: 200px;
+  margin: 0;
+  height: max-content;
   width: 100%;
+  height: 100%;
 }
 .service-icon {
   background: red;
@@ -694,27 +686,27 @@ main h2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 25px;
+  margin: 25px;
 }
 .service-description {
   display: none;
   justify-content: center;
-  align-items: start;
+  align-items: center;
   flex-direction: column;
   overflow: hidden;
-  width: calc(100% - 100px);
+  width: 100%;
+  height: 50%;
   opacity: 0;
-  transform: translateY(30px);
-  transition-delay: 3s;
-  transition: all 3s ease;
-  text-align: justify;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.6);
 }
 .service-title {
   text-transform: uppercase;
+  text-align: center;
 }
 .service-p {
   color: #b0b0ba;
-  padding: 10px;
+  text-align: justify;
 }
 
 .flex-container > input {
@@ -728,6 +720,12 @@ main h2 {
   opacity: 1 !important;
   transform: translateY(0) !important;
   display: flex !important;
+}
+
+@media (max-width: 460px) {
+  .service-row {
+    height: 100%;
+  }
 }
 
 /****************** section About *****************/
